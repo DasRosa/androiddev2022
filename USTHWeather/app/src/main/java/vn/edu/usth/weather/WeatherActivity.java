@@ -11,6 +11,9 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+        ForecastFragment forecast = ForecastFragment.newInstance("", "");
+        getSupportFragmentManager().beginTransaction().add(
+                R.id.container, forecast).commit();
     }
 
     @Override
