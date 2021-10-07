@@ -62,18 +62,19 @@ public class ForecastFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        LinearLayout linearLayout = new LinearLayout(getActivity());
-        linearLayout.setBackgroundColor(0x200000FF);
-        linearLayout.setOrientation(linearLayout.VERTICAL);
+//        LinearLayout linearLayout = new LinearLayout(getActivity());
+//        linearLayout.setBackgroundColor(0x200000FF);
+//        linearLayout.setOrientation(linearLayout.VERTICAL);
+//
+//        TextView thursday = new TextView(getActivity());
+//        thursday.setText("On Thursday, we have a sunny day.");
+//        ImageView sunny = new ImageView(getActivity());
+//        sunny.setImageResource(R.drawable.sunny);
+//
+//        linearLayout.addView(thursday);
+//        linearLayout.addView(sunny);
+        View view = inflater.inflate(R.layout.fragment_forecast, container, false);
 
-        TextView thursday = new TextView(getActivity());
-        thursday.setText("On Thursday, we have a sunny day.");
-        ImageView sunny = new ImageView(getActivity());
-        sunny.setImageResource(R.drawable.sunny);
-
-        linearLayout.addView(thursday);
-        linearLayout.addView(sunny);
-
-        return linearLayout;
+        return view;
     }
 }
