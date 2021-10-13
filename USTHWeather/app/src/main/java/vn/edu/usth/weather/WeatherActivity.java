@@ -22,6 +22,8 @@ public class WeatherActivity extends AppCompatActivity {
 //                R.id.container, wff).commit();
         PagerAdapter adapter = new FragmentAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(pager);
         pager.setOffscreenPageLimit(3);
         pager.setAdapter(adapter);
     }
