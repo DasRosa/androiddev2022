@@ -13,7 +13,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:background="#E1EED3"
+        android:background="@color/lightgreen"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -25,12 +25,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="12C" />
+                android:text="@string/_12c" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Cloudy" />
+                android:text="@string/cloudy" />
         </LinearLayout>
 
         <TextView
@@ -42,7 +42,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
-            android:text="Paris" />
+            android:text="@string/city" />
 
         <ImageView
             android:layout_width="200dp"
@@ -95,12 +95,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Partly Cloudy" />
+                        android:text="@string/partly_cloudy" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="24C-31C" />
+                        android:text="@string/_24c_31c" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -133,12 +133,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Showers" />
+                        android:text="@string/showers" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="24C-30C" />
+                        android:text="@string/_24c_30c" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -171,12 +171,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rain" />
+                        android:text="@string/rain" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="22C-23C" />
+                        android:text="@string/_22c_23c" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -209,12 +209,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Scattered Showers" />
+                        android:text="@string/scattered_showers" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="22C-27C" />
+                        android:text="@string/_22c_27c" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -247,12 +247,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mostly Cloudy" />
+                        android:text="@string/mostly_cloudy" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="22C-30C" />
+                        android:text="@string/_22c_30c" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -285,12 +285,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Partly Cloudy" />
+                        android:text="@string/partly_cloudy" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="24C-31C" />
+                        android:text="@string/_24c_31c" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -323,12 +323,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Thunderstorms" />
+                        android:text="@string/thunderstorms" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="25C-28C" />
+                        android:text="@string/_25c_28c" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -361,12 +361,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Scattered Thunderstorms" />
+                        android:text="@string/scattered_thunderstorms" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="24C-27C" />
+                        android:text="@string/_24c_27c" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -399,12 +399,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Showers" />
+                        android:text="@string/showers" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="24C-26C" />
+                        android:text="@string/_24c_26c" />
                 </LinearLayout>
             </LinearLayout>
 

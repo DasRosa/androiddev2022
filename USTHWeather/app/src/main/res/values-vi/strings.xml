@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">USTH Thời Tiết</string>
+    <string name="mon">Thứ 2</string>
+    <string name="tue">Thứ 3</string>
+    <string name="wed">Thứ 4</string>
+    <string name="thu">Thứ 5</string>
+    <string name="fri">Thứ 6</string>
+    <string name="sat">Thứ 7</string>
+    <string name="sun">Chủ Nhật</string>
+    <string name="cloudy">Nhiều mây</string>
+    <string name="_12c">12C</string>
+    <string name="_24c_30c">24C-30C</string>
+    <string name="rain">Mưa</string>
+    <string name="_22c_23c">22C-23C</string>
+    <string name="scattered_showers">Mưa rào</string>
+    <string name="_22c_27c">22C-27C</string>
+    <string name="mostly_cloudy">Nhiều mây</string>
+    <string name="_22c_30c">22C-30C</string>
+    <string name="partly_cloudy">Ít mây</string>
+    <string name="_24c_31c">24C-31C</string>
+    <string name="thunderstorms">Sấm sét</string>
+    <string name="_25c_28c">25C-28C</string>
+    <string name="scattered_thunderstorms">Sấm chớp rải rác</string>
+    <string name="_24c_27c">24C-27C</string>
+    <string name="showers">Nhiều mưa</string>
+    <string name="_24c_26c">24C-26C</string>
+    <string name="city">Hà Nội</string>
+</resources>
