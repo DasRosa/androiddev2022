@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +59,10 @@ public class WeatherFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_weather, container, false);
+        View frView;// Inflate the layout for this fragment
+        frView = inflater.inflate(R.layout.fragment_weather, container, false);
+        TextView city = (TextView) frView.findViewById(R.id.city);
+        city.setText(mParam1);
+        return frView;
     }
 }
