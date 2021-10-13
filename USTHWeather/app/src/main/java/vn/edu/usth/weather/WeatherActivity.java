@@ -7,8 +7,13 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
+import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
+
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -26,6 +31,10 @@ public class WeatherActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(pager);
         pager.setOffscreenPageLimit(3);
         pager.setAdapter(adapter);
+
+        InputStream is = getResources().openRawResource(R.raw.sample);
+        MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.sample);
+        mediaPlayer.start();
     }
 
     @Override
