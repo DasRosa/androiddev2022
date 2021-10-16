@@ -1,19 +1,20 @@
 package vn.edu.usth.weather;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
-import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.io.InputStream;
-import java.io.OutputStream;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -35,6 +36,26 @@ public class WeatherActivity extends AppCompatActivity {
         InputStream is = getResources().openRawResource(R.raw.sample);
         MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.sample);
         mediaPlayer.start();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.refresh) {
+            Toast.makeText(this, "Refresh everything", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        else if (item.getItemId() == R.id.setting) {
+            Intent intent = new Intent(WeatherActivity.this, PrefActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     @Override
