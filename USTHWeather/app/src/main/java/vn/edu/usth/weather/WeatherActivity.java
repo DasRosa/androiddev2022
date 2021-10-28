@@ -1,18 +1,22 @@
 package vn.edu.usth.weather;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-import com.google.android.material.tabs.TabLayout;
-
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.io.InputStream;
 
@@ -41,8 +45,30 @@ public class WeatherActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.refresh) {
-            Toast.makeText(this, "Refresh everything", Toast.LENGTH_SHORT).show();
-            return true;
+            final Handler handler = new Handler(Looper.getMainLooper()) {
+                @Override
+                public void handleMessage(Message msg) {
+                    String content = msg.getData().getString("server_response");
+                    Toast.makeText(WeatherActivity.this, content, Toast.LENGTH_SHORT).show();
+                }
+            };
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(5000);
+                    }
+                    catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Bundle bundle = new Bundle();
+                    Bundle.putString("server_response", "some sample json here");
+                    Message msg = new Message();
+                    msg.setData(bundle);
+                    handler.sendMessage(msg);
+                }
+            });
+            t.start();
         }
         else if (item.getItemId() == R.id.setting) {
             Intent intent = new Intent(WeatherActivity.this, PrefActivity.class);
