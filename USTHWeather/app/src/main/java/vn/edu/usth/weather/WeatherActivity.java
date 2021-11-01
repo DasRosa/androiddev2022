@@ -45,30 +45,32 @@ public class WeatherActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.refresh) {
-            final Handler handler = new Handler(Looper.getMainLooper()) {
-                @Override
-                public void handleMessage(Message msg) {
-                    String content = msg.getData().getString("server_response");
-                    Toast.makeText(WeatherActivity.this, content, Toast.LENGTH_SHORT).show();
-                }
-            };
-            Thread t = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Thread.sleep(5000);
-                    }
-                    catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    Bundle bundle = new Bundle();
-                    Bundle.putString("server_response", "some sample json here");
-                    Message msg = new Message();
-                    msg.setData(bundle);
-                    handler.sendMessage(msg);
-                }
-            });
-            t.start();
+//            final Handler handler = new Handler(Looper.getMainLooper()) {
+//                @Override
+//                public void handleMessage(Message msg) {
+//                    String content = msg.getData().getString("server_response");
+//                    Toast.makeText(WeatherActivity.this, content, Toast.LENGTH_SHORT).show();
+//                }
+//            };
+//            Thread t = new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    try {
+//                        Thread.sleep(5000);
+//                    }
+//                    catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                    Bundle bundle = new Bundle();
+//                    Bundle.putString("server_response", "some sample json here");
+//                    Message msg = new Message();
+//                    msg.setData(bundle);
+//                    handler.sendMessage(msg);
+//                }
+//            });
+//            t.start();
+            MyAsyncTask myAsyncTask = new MyAsyncTask(WeatherActivity.this);
+            myAsyncTask.execute();
         }
         else if (item.getItemId() == R.id.setting) {
             Intent intent = new Intent(WeatherActivity.this, PrefActivity.class);
