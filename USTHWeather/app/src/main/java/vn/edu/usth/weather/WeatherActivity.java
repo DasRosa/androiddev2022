@@ -1,6 +1,7 @@
 package vn.edu.usth.weather;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +10,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,6 +18,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.tabs.TabLayout;
 
 import java.io.InputStream;
@@ -69,8 +75,22 @@ public class WeatherActivity extends AppCompatActivity {
 //                }
 //            });
 //            t.start();
-            MyAsyncTask myAsyncTask = new MyAsyncTask(WeatherActivity.this);
-            myAsyncTask.execute();
+//            MyAsyncTask myAsyncTask = new MyAsyncTask(WeatherActivity.this);
+//            myAsyncTask.execute();
+            RequestQueue queue = Volley.newRequestQueue(this);
+            Response.Listener<Bitmap> listener =
+                    new Response.Listener<Bitmap>() {
+                        @Override
+                        public void onResponse(Bitmap response) {
+                            ImageView iv = (ImageView) findViewById(R.id.logo);
+                            iv.setImageBitmap(response);
+                        }
+                    };
+            ImageRequest imageRequest = new ImageRequest(
+                    "http://ict.usth.edu.vn/wp-content/uploads/usth/usthlogo.png",
+                    listener, 0, 0, ImageView.ScaleType.CENTER,
+                    Bitmap.Config.ARGB_8888,null);
+            queue.add(imageRequest);
         }
         else if (item.getItemId() == R.id.setting) {
             Intent intent = new Intent(WeatherActivity.this, PrefActivity.class);
